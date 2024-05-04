@@ -14,11 +14,13 @@
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
 
-                // Create SMS message with location
-                var smsMessage = "Latitude: " + latitude + ", Longitude: " + longitude;
+                // Create SMS message with location and phone number
+                var phoneNumber = "5419907215"; 
+                var message = "Mako has been found! He's currently at: Latitude: " + latitude + ", Longitude: " + longitude;
+                var smsMessage = "sms:" + phoneNumber + "?body=" + encodeURIComponent(message);
 
                 // Open SMS app with pre-filled message
-                window.location.href = "sms:?body=" + encodeURIComponent(smsMessage);
+                window.location.href = smsMessage;
             });
         }
 
