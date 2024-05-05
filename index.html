@@ -1,4 +1,44 @@
 <html>
+<head>
+    <title>Share Location via SMS</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            background-color: #99ccff; /* Set background color */
+            font-family: Simple Kind of Girl, Medium; /* Set font family */
+            text-align: center; /* Center align text */
+        }
+
+        /* CSS styles for the button */
+        #shareLocationBtn {
+            font-size: 48px; /* Font size for the button */
+            margin-top: 20px; /* Add space above the button */
+            padding: 30px 40px; /* Add padding to the button */
+            background-color: #336666; /* Button background color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add rounded corners */
+            cursor: pointer; /* Add cursor pointer */
+            transition: background-color 0.3s; /* Add transition effect */
+        }
+
+        #shareLocationBtn:hover {
+            background-color: #003333; /* Darker background color on hover */
+        }
+
+        /* CSS styles for the information text */
+        #infoText {
+            font-size: 48px; /* Font size for the information text */
+            margin-bottom: 20px; /* Add space below the text */
+        }
+    </style>
+</head>
+<body>
+    <!-- Information text -->
+    <p id="infoText">Please send your location via text to Lisa, so she can come pick Mako up.</p>
+
+    <!-- Share Location button -->
+    <button id="shareLocationBtn">Share Location</button>
 
     <script>
         // Function to share location via SMS
@@ -13,9 +53,9 @@
                 var googleMapsLink = "https://www.google.com/maps?q=" + latitude + "," + longitude;
 
                 // Create SMS message with location and Google Maps link
-                var phoneNumber = "5419907215"; // 
+                var phoneNumber = "5419907215"; // Replace with your phone number
                 var message = "Mako has been found! He's currently at: " + googleMapsLink;
-                var smsMessage = "sms:" + phoneNumber + "&body=" + encodeURIComponent(message);
+                var smsMessage = "sms:" + phoneNumber + "?body=" + encodeURIComponent(message);
 
                 // Open SMS app with pre-filled message
                 window.location.href = smsMessage;
